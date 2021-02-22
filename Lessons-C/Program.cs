@@ -2,11 +2,11 @@
 
 namespace Lessons_C
 {
-    class Program
-    {
+    class Program 
+    { 
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Bye World!");
             Console.ReadKey();
         }
     }
