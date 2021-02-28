@@ -6,103 +6,53 @@ namespace Lessons_C
     { 
         static void Main(string[] args)
         {
+            Console.WriteLine(Math.Pow(3, 4)); // возведение числа в степень
 
-            Console.BackgroundColor = ConsoleColor.White;
-            Console.ForegroundColor = ConsoleColor.Black;
-            Console.WriteLine("Zdorova");
+            Console.WriteLine(Math.Sqrt(36)); // Нахождение числа из корня 
 
-            Console.ForegroundColor++;
-            Console.WriteLine("Zdorova"); // 1
+            Console.WriteLine(Math.Log(36, 6)); // Нахождение опказателся степени 
 
-            Console.ForegroundColor++;
-            Console.WriteLine("Zdorova"); // 2
+            string firstword, secondword, text;
+            int augend, addend;
 
-            Console.ForegroundColor++;
-            Console.WriteLine("Zdorova"); // 3
+           firstword = Console.ReadLine();
+           secondword = Console.ReadLine(); 
 
-            Console.ForegroundColor++;
-            Console.WriteLine("Zdorova"); // 4 
+           text = firstword + ' ' + secondword;
+           text += '!';
 
-            Console.ForegroundColor++;
-            Console.WriteLine("Zdorova"); // 5
+           Console.WriteLine(text);
 
-            Console.ForegroundColor++;
-            Console.WriteLine("Zdorova"); // 6
+            /*Первый метод решения через сразу ввод чисел 
 
-            Console.ForegroundColor++;
-            Console.WriteLine("Zdorova"); // 7
+          //  Console.WriteLine("Введите первое слагаемое : ");
+           //  augend = Convert.ToInt32(Console.ReadLine());
 
-            Console.ForegroundColor++;
-            Console.WriteLine("Zdorova"); // 8
+          //  Console.WriteLine("Введите второе слагаеоме : ");
+          //   addend = Convert.ToInt32(Console.ReadLine());
 
-            Console.ForegroundColor++;
-            Console.WriteLine("Zdorova"); // 9
+           // int sum = augend + addend;
 
-            Console.ForegroundColor++;
-            Console.WriteLine("Zdorova"); // 10
+           // Console.WriteLine(augend + "+" + addend + "=" +sum);
 
-            Console.ForegroundColor++;
-            Console.WriteLine("Zdorova"); // 11
+            */
 
-            Console.ForegroundColor++;
-            Console.WriteLine("Zdorova"); // 12
+            Console.WriteLine("Введите первое слагаемое : ");
+            string firstaugend = Console.ReadLine();
 
-            Console.ForegroundColor++;
-            Console.WriteLine("Zdorova"); // 13 
+            Console.WriteLine("Введите второе слагаемое : ");
+            string secondaddend = Console.ReadLine();
 
-            Console.ForegroundColor++;
-            Console.WriteLine("Zdorova"); // 14
+            augend = Convert.ToInt32(firstaugend);
+            addend = Convert.ToInt32(secondaddend);
 
-            Console.ForegroundColor++;
-            Console.WriteLine("Zdorova"); // 15
+            int sum = augend + addend;
 
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine("POKA"); // 15
+            string result = string.Format("Итог суммы : {0} + {1} = {2}", augend, addend, sum);
+            Console.WriteLine(result);
 
-            Console.ForegroundColor--;
-            Console.WriteLine("POKA"); // 14
+            /* Второй способ через конвертацию из string в Int32 */
 
-            Console.ForegroundColor--;
-            Console.WriteLine("POKA"); // 13
-
-            Console.ForegroundColor--;
-            Console.WriteLine("POKA"); // 12 
-
-            Console.ForegroundColor--;
-            Console.WriteLine("POKA"); // 11
-
-            Console.ForegroundColor--;
-            Console.WriteLine("POKA"); // 10
-
-            Console.ForegroundColor--;
-            Console.WriteLine("POKA"); // 9 
-
-            Console.ForegroundColor--; // 8
-            Console.WriteLine("POKA");
-
-            Console.ForegroundColor--; // 7
-            Console.WriteLine("POKA");
-
-            Console.ForegroundColor--;
-            Console.WriteLine("POKA"); // 6
-
-            Console.ForegroundColor--;
-            Console.WriteLine("POKA"); // 5
-
-            Console.ForegroundColor--;
-            Console.WriteLine("POKA"); // 4
-
-            Console.ForegroundColor--;
-            Console.WriteLine("POKA"); // 3
-
-            Console.ForegroundColor--;
-            Console.WriteLine("POKA"); // 2
-
-            Console.ForegroundColor--;
-            Console.WriteLine("POKA"); // 1
-
-            Console.ForegroundColor--;
-            Console.WriteLine("POKA"); // 0
 
             Console.ReadKey();
 
