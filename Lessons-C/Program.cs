@@ -6,23 +6,103 @@ namespace Lessons_C
     { 
         static void Main(string[] args)
         {
-             float T_mo, T_tu, T_we, T_th, T_fr, T_sa, T_su, T_sum, T_avg;
-             int sevendays = 7;
 
-             T_mo = Convert.ToSingle(Console.ReadLine());
-             T_tu = Convert.ToSingle(Console.ReadLine());
-             T_we = Convert.ToSingle(Console.ReadLine());
-             T_th = Convert.ToSingle(Console.ReadLine());
-             T_fr = Convert.ToSingle(Console.ReadLine());
-             T_sa = Convert.ToSingle(Console.ReadLine());
-             T_su = Convert.ToSingle(Console.ReadLine());
-             
-             T_sum = T_mo + T_tu + T_we + T_th + T_fr + T_sa + T_su;
-             T_avg = T_sum / sevendays;
+            Console.BackgroundColor = ConsoleColor.White;
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.WriteLine("Zdorova");
 
+            Console.ForegroundColor++;
+            Console.WriteLine("Zdorova"); // 1
 
-            Console.WriteLine(T_sum);
-            Console.WriteLine(T_avg);
+            Console.ForegroundColor++;
+            Console.WriteLine("Zdorova"); // 2
+
+            Console.ForegroundColor++;
+            Console.WriteLine("Zdorova"); // 3
+
+            Console.ForegroundColor++;
+            Console.WriteLine("Zdorova"); // 4 
+
+            Console.ForegroundColor++;
+            Console.WriteLine("Zdorova"); // 5
+
+            Console.ForegroundColor++;
+            Console.WriteLine("Zdorova"); // 6
+
+            Console.ForegroundColor++;
+            Console.WriteLine("Zdorova"); // 7
+
+            Console.ForegroundColor++;
+            Console.WriteLine("Zdorova"); // 8
+
+            Console.ForegroundColor++;
+            Console.WriteLine("Zdorova"); // 9
+
+            Console.ForegroundColor++;
+            Console.WriteLine("Zdorova"); // 10
+
+            Console.ForegroundColor++;
+            Console.WriteLine("Zdorova"); // 11
+
+            Console.ForegroundColor++;
+            Console.WriteLine("Zdorova"); // 12
+
+            Console.ForegroundColor++;
+            Console.WriteLine("Zdorova"); // 13 
+
+            Console.ForegroundColor++;
+            Console.WriteLine("Zdorova"); // 14
+
+            Console.ForegroundColor++;
+            Console.WriteLine("Zdorova"); // 15
+
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("POKA"); // 15
+
+            Console.ForegroundColor--;
+            Console.WriteLine("POKA"); // 14
+
+            Console.ForegroundColor--;
+            Console.WriteLine("POKA"); // 13
+
+            Console.ForegroundColor--;
+            Console.WriteLine("POKA"); // 12 
+
+            Console.ForegroundColor--;
+            Console.WriteLine("POKA"); // 11
+
+            Console.ForegroundColor--;
+            Console.WriteLine("POKA"); // 10
+
+            Console.ForegroundColor--;
+            Console.WriteLine("POKA"); // 9 
+
+            Console.ForegroundColor--; // 8
+            Console.WriteLine("POKA");
+
+            Console.ForegroundColor--; // 7
+            Console.WriteLine("POKA");
+
+            Console.ForegroundColor--;
+            Console.WriteLine("POKA"); // 6
+
+            Console.ForegroundColor--;
+            Console.WriteLine("POKA"); // 5
+
+            Console.ForegroundColor--;
+            Console.WriteLine("POKA"); // 4
+
+            Console.ForegroundColor--;
+            Console.WriteLine("POKA"); // 3
+
+            Console.ForegroundColor--;
+            Console.WriteLine("POKA"); // 2
+
+            Console.ForegroundColor--;
+            Console.WriteLine("POKA"); // 1
+
+            Console.ForegroundColor--;
+            Console.WriteLine("POKA"); // 0
 
             Console.ReadKey();
 
