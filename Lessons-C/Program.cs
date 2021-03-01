@@ -6,31 +6,34 @@ namespace Lessons_C
     { 
         static void Main(string[] args)
         {
-            int augend, addend;
-            Console.WriteLine("Введите первое слагаемое : ");
-            string firstaugend = Console.ReadLine();
+            bool x = true, y = false;
+            int age, salary, minage = 21, maxage = 55, minsalary = 1500; 
 
-            Console.WriteLine("Введите второе слагаемое : ");
-            string secondaddend = Console.ReadLine();
+            Console.WriteLine($"Первое значение {x} = {!x}, второе значение {y} = {!y}");
 
-            augend = Convert.ToInt32(firstaugend);
-            addend = Convert.ToInt32(secondaddend);
+            bool notx = !x, noty = !y;
 
-            int sum = augend + addend;
+            Console.WriteLine($"Первое значение {x} = {notx}, второе значение {y} = {noty}");
 
-            string result = $"итог суммы : {augend} + {addend} = {sum}";
-            Console.WriteLine(result);
+            age = Convert.ToInt32(Console.ReadLine());
+            salary = Convert.ToInt32(Console.ReadLine());
 
-            double interpolationExpression = 0.123456789_12345678;
-            const int aligment = 30;
+            bool credit = salary >= minsalary & age >= minage & age <= maxage;
 
-            Console.WriteLine($"8. R format : {interpolationExpression,-aligment:R} : End.");
+            Console.WriteLine($"Ввывод акредетирования : {credit}");
 
-            Console.WriteLine($"8. R format : {interpolationExpression,aligment:R} : End.");
+            int firstnumber = 0, secondnumber = 0;
 
-            Console.WriteLine(@"C:\windows\notepad.exe");
-            Console.WriteLine("C:\\winsows\\notepad.exe");
-            
+            bool normalcongiiukcia = true & false & (firstnumber++ > 0);
+            Console.WriteLine($"Firstnumber : {firstnumber}");
+
+            bool corotcozamknutaiacongiucia = true && false && (secondnumber++ > 0);
+            Console.WriteLine($"Secondnumber : {secondnumber}");
+
+
+
+
+
             Console.ReadKey();
 
 
