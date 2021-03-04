@@ -6,38 +6,46 @@ namespace Lessons_C
     { 
         static void Main(string[] args)
         {
-            bool x = true, y = false;
-            int age, salary, minage = 21, maxage = 55, minsalary = 1500; 
 
-            Console.WriteLine($"Первое значение {x} = {!x}, второе значение {y} = {!y}");
+            uint minutsInKvartal;
+            {
+                Console.Write("Кол-во минут за июль : ");
+                uint minutsInIuni = Convert.ToUInt32(Console.ReadLine());
 
-            bool notx = !x, noty = !y;
+                Console.Write("Кол-во минут за июнь : ");
+                uint minutsInIuli = Convert.ToUInt32(Console.ReadLine());
 
-            Console.WriteLine($"Первое значение {x} = {notx}, второе значение {y} = {noty}");
+                Console.Write("Кол-во мигут за август : ");
+                uint minutsInAugust = Convert.ToUInt32(Console.ReadLine());
 
-            age = Convert.ToInt32(Console.ReadLine());
-            salary = Convert.ToInt32(Console.ReadLine());
+                minutsInKvartal = minutsInIuni + minutsInIuli + minutsInAugust;
+            }
 
-            bool credit = salary >= minsalary & age >= minage & age <= maxage;
+            decimal priceInKvartal;
+            {
+                Console.Write("Введи цену минуты тарифа : ");
+                decimal price = Convert.ToDecimal(Console.ReadLine());
 
-            Console.WriteLine($"Ввывод акредетирования : {credit}");
+                priceInKvartal = minutsInKvartal * price;
+            }
 
-            int firstnumber = 0, secondnumber = 0;
+            decimal nalogZaKvartal;
+            {
+                Console.Write("Введи налог государства :");
+                decimal nalog = Convert.ToDecimal(Console.ReadLine());
 
-            bool normalcongiiukcia = true & false & (firstnumber++ > 0);
-            Console.WriteLine($"Firstnumber : {firstnumber}");
+                nalogZaKvartal = priceInKvartal / 100 * nalog;
 
-            bool corotcozamknutaiacongiucia = true && false && (secondnumber++ > 0);
-            Console.WriteLine($"Secondnumber : {secondnumber}");
+            }
 
-
-
-
-
+            Console.WriteLine($"Кол-во минут за квартал : {minutsInKvartal}");
+            Console.Write($"Стоимость всех минут {priceInKvartal} и сумма налога {nalogZaKvartal}");
+            
+            
+            
+            
+            
             Console.ReadKey();
-
-
-
 
 
 
