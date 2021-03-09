@@ -7,43 +7,41 @@ namespace Lessons_C
         static void Main(string[] args)
         {
 
-            uint minutsInKvartal;
+            decimal plitkaKoliscestvo, plitkaCena;
             {
-                Console.Write("Кол-во минут за июль : ");
-                uint minutsInIuni = Convert.ToUInt32(Console.ReadLine());
-
-                Console.Write("Кол-во минут за июнь : ");
-                uint minutsInIuli = Convert.ToUInt32(Console.ReadLine());
-
-                Console.Write("Кол-во мигут за август : ");
-                uint minutsInAugust = Convert.ToUInt32(Console.ReadLine());
-
-                minutsInKvartal = minutsInIuni + minutsInIuli + minutsInAugust;
-            }
-
-            decimal priceInKvartal;
-            {
-                Console.Write("Введи цену минуты тарифа : ");
-                decimal price = Convert.ToDecimal(Console.ReadLine());
-
-                priceInKvartal = minutsInKvartal * price;
-            }
-
-            decimal nalogZaKvartal;
-            {
-                Console.Write("Введи налог государства :");
-                decimal nalog = Convert.ToDecimal(Console.ReadLine());
-
-                nalogZaKvartal = priceInKvartal / 100 * nalog;
+                Console.WriteLine("Введите кол-во плитки : ");
+                plitkaKoliscestvo = Convert.ToUInt32(Console.ReadLine());
+                Console.WriteLine("Введите Цену плитки : ");
+                plitkaCena = Convert.ToUInt32(Console.ReadLine());
 
             }
 
-            Console.WriteLine($"Кол-во минут за квартал : {minutsInKvartal}");
-            Console.Write($"Стоимость всех минут {priceInKvartal} и сумма налога {nalogZaKvartal}");
-            
-            
-            
-            
+            decimal fullPriceTale;
+            {
+                fullPriceTale = plitkaCena * plitkaKoliscestvo;
+            }
+
+            bool discount = plitkaKoliscestvo >= 100;
+            decimal priceDiscount;
+
+            if (discount)
+            {
+                const decimal DISCOUNT = 10; // %
+                priceDiscount = fullPriceTale / 100 * DISCOUNT;
+            }
+            else
+            {
+                priceDiscount = 0; 
+            }
+
+            decimal totalPriceTale;
+            {
+                totalPriceTale = fullPriceTale - priceDiscount;
+            }
+
+            Console.WriteLine($"Общая стоимость : {fullPriceTale}");
+            Console.WriteLine($"Сумма скидки : {priceDiscount}");
+            Console.WriteLine($"Сумма к оплате : {totalPriceTale}");
             
             Console.ReadKey();
 
