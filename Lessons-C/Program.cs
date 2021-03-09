@@ -21,19 +21,37 @@ namespace Lessons_C
                 fullPriceTale = plitkaCena * plitkaKoliscestvo;
             }
 
-            bool discount = plitkaKoliscestvo >= 100;
             decimal priceDiscount;
-
-            if (discount)
             {
-                const decimal DISCOUNT = 10; // %
-                priceDiscount = fullPriceTale / 100 * DISCOUNT;
-            }
-            else
-            {
-                priceDiscount = 0; 
-            }
+                decimal discountpersentage;
+                {
+                    bool discountFor20Pct, discountFor50Pct;
+                    {
+                        const decimal DISCOUNT_FOR_50_PCT = 1000;
+                        const decimal DISCOUNT_FOR_20_PCT = 500;
+                        discountFor20Pct = plitkaKoliscestvo >= DISCOUNT_FOR_20_PCT && plitkaKoliscestvo < DISCOUNT_FOR_50_PCT;
+                        discountFor50Pct = plitkaKoliscestvo >= 1000;
 
+                        if (discountFor20Pct)
+                        {
+                            discountpersentage = 20;
+                        }
+                        else
+                        {
+                            if (discountFor50Pct)
+                            {
+                                discountpersentage = 50;
+                            }
+                            else
+                            {
+                                discountpersentage = 0;
+                            }
+                        }
+                    }
+                    priceDiscount = fullPriceTale / 100 * discountpersentage;
+                }
+
+            }
             decimal totalPriceTale;
             {
                 totalPriceTale = fullPriceTale - priceDiscount;
