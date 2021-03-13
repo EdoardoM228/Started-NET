@@ -2,82 +2,60 @@
 
 namespace Lessons_C
 {
-    class Program 
-    { 
+    class Program
+    {
         static void Main(string[] args)
         {
 
-            while (true)
             {
-                string sizeCoffee;
-                bool correctNumber;
+                Console.Write("Введите кол-во элементов в массиве : ");
+                int sizeArray = Convert.ToInt32(Console.ReadLine());
+                int[] array = new int[sizeArray];
+                int index = 0;
 
-                do
+                while (index < array.Length)
                 {
-                    Console.WriteLine("Hello Im coffee machine....");
-                    Console.WriteLine("How coffee size you need : 1=small 2=medium 3=large");
-                    Console.Write("Enter number or word : ");
-                    sizeCoffee = Console.ReadLine();
-                    switch (sizeCoffee)
-                    {
-                        case "1":
-                        case "2":
-                        case "3":
-                            correctNumber = false;
-                            break;
-                        default:
-                            Console.ForegroundColor = ConsoleColor.Red;
-                            Console.WriteLine($"Вы ввели неверный символ : {sizeCoffee}");
-                            Console.ForegroundColor = ConsoleColor.Gray;
-                            correctNumber = true;
-                            break;
-                    }
-                }
-                while (correctNumber);
-
-
-
-                int priceCoffee = 0;
-
-                switch (sizeCoffee)
-                {
-                    case "1":
-                    case "small":
-                        priceCoffee += 25;
-                        break;
-                    case "2":
-                    case "medium":
-                        priceCoffee += 50;
-                        break;
-                    case "3":
-                    case "large":
-                        priceCoffee += 75;
-                        break;
-                    default:
-                        Console.WriteLine("Invalid number...Try again");
-                        break;
+                    array[index] = index;
+                    Console.Write($"{array[index]}, ");
+                    index++;
                 }
 
+                Console.Write("\nВведите значение нового элемента массива : ");
+                int newElementArray = Convert.ToInt32(Console.ReadLine());
 
-                if (priceCoffee != 0)
+                Array.Resize(ref array, array.Length + 1);
+                array[array.Length - 1] = newElementArray;
+
+                index = 0;
+
+                while (index < array.Length)
                 {
-                    Console.WriteLine($"Your coffee price is : {priceCoffee}");
+                    Console.Write($"{array[index]}, ");
+                    index++;
+                }                 
+
+
+                Console.Write("\nВведи размер массива: ");
+                int n = Convert.ToInt32(Console.ReadLine());
+                int[] array2 = new int[100];
+                index = 0;
+
+                Console.Write("\nВведи значение в массив: ");
+                while (index < n)
+                {
+                    array2[index] = Convert.ToInt32(Console.ReadLine());
+                    index++;
                 }
 
-                // switch (priceCoffee)
-                // {
-                // case 25:
-                // case 50:
-                // case 75:
-                //   Console.WriteLine($"Your coffee price is : {priceCoffee}");
-                //  break;
-                // }
+                Console.WriteLine($"Сумма 0-его значения и 1 значения массива { array2[0] + array2[1]}");
 
-                Console.WriteLine("Нажмите Enter после завершения заказа.");
+
                 Console.ReadKey();
 
 
+                 
             }
+            
         }
     }
 }
