@@ -8,34 +8,39 @@ namespace Lessons_C
         {
 
             string[] months = { "January", "February", "March" };
-            string[] tiles = { "Copper", "iron", "aluminum" };
+            string[] ore = { "Copper", "iron", "aluminum" };
             string[] distributors = { "World of Mine", "Miners Guild" };
-            decimal[,,] array = new decimal[distributors.Length, tiles.Length, months.Length];
+            string[] countries = { "Germany", "Russia" };
+            decimal[,,,] array = new decimal[countries.Length, distributors.Length, ore.Length, months.Length];
 
             for (int i = 0; i < array.GetLength(0); i++)
                 for (int j = 0; j < array.GetLength(1); j++)
                     for (int k = 0; k < array.GetLength(2); k++)
+                        for (int l = 0; l < array.GetLength(3); l++)
                     {
-                        Console.Write($"{distributors[i]} продал плитки {tiles[j]} за {months[k]} : ");
-                        array[i, j, k] = Convert.ToDecimal(Console.ReadLine());
+                        Console.Write($"{distributors[j]} продал руды {ore[k]} за {months[l]} в {countries[i]}: ");
+                        array[i, j, k, l] = Convert.ToDecimal(Console.ReadLine());
                     }
 
             while (true)
             {
                 Console.Write("Введи название дистрибьютора : ");
                 string nameOfDistributor = Console.ReadLine();
-                Console.Write("Введи название плитки : ");
-                string nameOfTile = Console.ReadLine();
+                Console.Write("Введи название руды : ");
+                string nameOfOre = Console.ReadLine();
                 int indexOfDistributor = Array.IndexOf(distributors, nameOfDistributor);
-                int indexOfTile = Array.IndexOf(tiles, nameOfTile);
+                int indexOfOre = Array.IndexOf(ore, nameOfOre);
 
                 decimal numberOfTiles = 0;
-                int k;
-                for (k = 0; k < array.GetLength(2); k++) 
+                int k, l;
+                for (l = 0; l < array.GetLength(0); l++)
                 {
-                    numberOfTiles += array[indexOfDistributor, indexOfTile, k];
+                    for (k = 0; k < array.GetLength(3); k++)
+                    {
+                        numberOfTiles += array[l, indexOfDistributor, indexOfOre, k];
+                    }
                 }
-                Console.WriteLine($"{nameOfDistributor} продал {nameOfTile} в количестве {numberOfTiles} шт. за квартал");
+                Console.WriteLine($"{nameOfDistributor} продал {nameOfOre} в количестве {numberOfTiles} шт. за квартал");
                 Console.WriteLine("\n Нажмите клавишу Enter для продолжения....");
             }
 
