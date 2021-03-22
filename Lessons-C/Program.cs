@@ -4,66 +4,82 @@ namespace Lessons_C
 {
     class Program
     {
-        static int NumbersFibonacciCycle(int number)
+        static double Calculator(string line, double number1, double number2)
         {
-            int n1 = 0, n2 = 1, n3 = 0;
-
-            for (int i = 0; i < number; i++)
+            double number3;
+            switch (line)
             {
-                n3 = n1 + n2;
-                n1 = n2;
-                n2 = n3;
-            }
-            return n3;
-        }
-
-        static int NumbersFibonacci(int number)
-        {
-            if (number < 2)
-            {
-                return number;
-            }
-            else
-            {
-                return NumbersFibonacci(number - 1) + NumbersFibonacci(number - 2);
+                case "/":
+                    number3 = number1 / number2;
+                    return number3;
+                case "+":
+                    number3 = number1 + number2;
+                    return number3;
+                case "-":
+                    number3 = number1 - number2;
+                    return number3;
+                case "*":
+                    number3 = number1 * number2;
+                    return number3;
+                default:
+                    return 0;
             }
         }
 
-
-
-        static int Factorial(int number)
-        {
-            int fact = 1;
-
-            for (int factor = 2; factor <= number; factor++)
-            {
-                fact = fact * factor;
-            }
-            return fact;
-        }
 
 
         static void Main(string[] args)
         {
-            string agree;
-            do
+            int[] matrix = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+            Console.ForegroundColor = ConsoleColor.White;
+            for (int i = 0; i <= matrix.Length - 1; i++)
             {
-                Console.Write("Введи число ,которого хочешь узнать факториал : ");
-                int factor = Convert.ToInt32(Console.ReadLine());
-                Console.Write($"{factor}! = {Factorial(factor)}");
+                if (matrix[i] % 3 == 0)
+                {
+                    Console.WriteLine($"{matrix[i]} ");
+                }
+                else
+                {
+                    Console.Write($"{matrix[i]} ");
+                }
+            }
 
-                Console.WriteLine("\nХодите получить число фибоначчи ?");
-                agree = Console.ReadLine();
-                Console.ReadKey();
-            } while (agree == "No");
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.Write("+ ");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write("0 ");
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("-");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.Write("/ ");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write("= ");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.Write("* ");
+            Console.ResetColor();
 
-            Console.Write("Какое число Фибоначчи хочешь узнать : ");
-            int fibonacci = Convert.ToInt32(Console.ReadLine());
-            int sumFibonacci;
-            for (int i = 0; i < fibonacci; i++)
+            while (true)
             {
-                sumFibonacci = NumbersFibonacciCycle(i);
-                Console.Write($"{sumFibonacci}, ");
+                Console.WriteLine("\nDoriti sa calculati ceva ?");
+                string choose = Console.ReadLine();
+                switch (choose)
+                {
+                    case "Da":
+                    case "da":
+                    case "Yes":
+                    case "yes":
+                        Console.WriteLine("Ce operatiune doriti ?(+,-,*,/)");
+                        string symbol = Console.ReadLine();
+                        Console.Write("Prima cifra : ");
+                        double num1 = Convert.ToDouble(Console.ReadLine());
+                        Console.Write("Al doilea : ");
+                        double num2 = Convert.ToDouble(Console.ReadLine());
+                        Console.WriteLine($"Raspunsul este : {Calculator(number1: num1, number2: num2, line: symbol)}");
+                        break;
+                    default:
+                        break;
+                }
+
             }
 
         }
